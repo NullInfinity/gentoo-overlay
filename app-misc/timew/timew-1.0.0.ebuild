@@ -9,7 +9,7 @@ inherit cmake-utils bash-completion-r1
 DESCRIPTION="Timewarrior is Free and Open Source Software that tracks time from the command line."
 HOMEPAGE="http://timewarrior.org/"
 
-SRC_URI="https://taskwarrior.org/download/${P/warrior/w}.tar.gz"
+SRC_URI="https://taskwarrior.org/download/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
