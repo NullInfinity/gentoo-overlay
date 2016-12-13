@@ -15,5 +15,5 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86 ~x64-macos"
 
-DEPEND="sys-libs/readline:0"
+DEPEND="sys-libs/readline:0 app-misc/task"
 RDEPEND="${DEPEND}"
