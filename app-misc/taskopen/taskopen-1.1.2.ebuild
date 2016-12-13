@@ -14,3 +14,5 @@ KEYWORDS="~amd64 ~arm ~x86 ~x64-macos"
 
 DEPEND="sys-libs/readline:0 app-misc/task"
 RDEPEND="${DEPEND}"
+
+PATCHES=( "${FILESDIR}"/0001-taskopen-fix-parallel-build.patch )
