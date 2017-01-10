@@ -9,9 +9,8 @@ This is my personal Portage overlay, with no particular focus. See below for det
 
 ## Modified Packages
 * `app-misc/task`: added `shell` and `taskopen` use flags to conditionally pull in `app-misc/tasksh` and `app-misc/taskopen` respectively
-## Version Bumped Packages
+## Version Bumpbed Packages
 * `media-sound/pasystray-0.6.0`
-* `sci-misc/mendeleydesktop-1.17.6`
 * `sys-fs/udiskie-1.5.1`
 
 ## Other
