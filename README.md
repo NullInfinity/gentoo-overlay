@@ -13,5 +13,6 @@ This is my personal Portage overlay, with no particular focus. See below for det
 * `media-sound/pasystray-0.6.0`
 * `sys-fs/udiskie-1.5.1`
 * `dev-python/neovim-python-client-0.1.13`
+* `dev-libs/girara-0.2.7`
 
 ## Other
