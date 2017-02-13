@@ -17,10 +17,11 @@ IUSE="+sync shell taskopen vim-syntax zsh-completion"
 
 DEPEND="sys-libs/readline:0
 	sync? ( net-libs/gnutls:0= )
-	shell? ( app-misc/tasksh )
-	taskopen? ( app-misc/taskopen )
 	elibc_glibc? ( sys-apps/util-linux )"
 RDEPEND="${DEPEND}"
+PDEPEND="
+	taskopen? ( app-misc/taskopen )
+	shell? ( app-misc/tasksh )"
 
 PATCHES=( "${FILESDIR}"/0001-TW-1778-Unicode-strings-are-truncated-in-task-descri.patch )
 
