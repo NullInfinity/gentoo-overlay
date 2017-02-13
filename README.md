@@ -2,6 +2,8 @@
 
 This is my personal Portage overlay, with no particular focus. See below for details of packages.
 
+Note that new packages and (especially) version bumps of existing packages are added without too much care or testing. USE AT YOUR OWN RISK.
+
 ## New Packages
 * `app-misc/timew`: [TimeWarrior](https://timewarrior.net)
 * `app-misc/tasksh`: interactive shell for Taskwarrior
