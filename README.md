@@ -11,6 +11,9 @@ Note that new packages and (especially) version bumps of existing packages are a
 
 ## Modified Packages
 * `app-misc/task`: added `shell` and `taskopen` use flags to conditionally pull in `app-misc/tasksh` and `app-misc/taskopen` respectively
+* `dev-util/google-perftools`: allow depending on `sys-libs/llvm-libunwind` as well as the GNU `sys-libs/libunwind`
+* `net-libs/zeromq`: allow depending on `sys-libs/llvm-libunwind` as well as the GNU `sys-libs/libunwind`
+
 ## Version Bumpbed Packages
 * `media-sound/pasystray-0.6.0`
 * `sys-fs/udiskie-1.5.1`
