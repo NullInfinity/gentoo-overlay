@@ -16,7 +16,7 @@ Note that new packages and (especially) version bumps of existing packages are a
 
 ## Version Bumpbed Packages
 * `media-sound/pasystray-0.6.0`
-* `sys-fs/udiskie-1.5.1`
+* `sys-fs/udiskie-1.7.0`
 * `dev-python/neovim-python-client-0.1.13`
 * `dev-libs/girara-0.2.7`
 
