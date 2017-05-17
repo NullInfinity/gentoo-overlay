@@ -24,6 +24,8 @@ DEPEND="${RDEPEND}
 	sys-apps/util-linux
 	pgm? ( virtual/pkgconfig )"
 
+PATCHES=( "${FILESDIR}"/${PN}-4.2.1-disable-experimental-zmq_poll-implementation.patch )
+
 src_prepare() {
 	sed \
 		-e '/libzmq_werror=/s:yes:no:g' \
