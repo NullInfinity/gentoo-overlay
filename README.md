@@ -14,6 +14,7 @@ added without too much care or testing. *USE AT YOUR OWN RISK*.
   paths/URLs
 
 ## Modified Packages
+
 * `app-misc/task`: added `shell` and `taskopen` use flags to conditionally pull
   in `app-misc/tasksh` and `app-misc/taskopen` respectively
 * `dev-util/google-perftools`: allow depending on `sys-libs/llvm-libunwind` as
@@ -22,9 +23,7 @@ added without too much care or testing. *USE AT YOUR OWN RISK*.
   GNU `sys-libs/libunwind`
 
 ## Version Bumped Packages
-* `media-sound/pasystray-0.6.0`
+
 * `sys-fs/udiskie-1.7.0`
-* `dev-python/neovim-python-client-0.1.13`
-* `dev-libs/girara-0.2.7`
 
 ## Other
