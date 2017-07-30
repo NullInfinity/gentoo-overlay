@@ -1,12 +1,10 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
-
-AUTOTOOLS_AUTORECONF=1
+EAPI=6
 
 MY_P="gperftools-${PV}"
-inherit toolchain-funcs eutils flag-o-matic vcs-snapshot autotools-multilib
+inherit toolchain-funcs flag-o-matic vcs-snapshot autotools multilib-minimal
 
 DESCRIPTION="Fast, multi-threaded malloc() and nifty performance analysis tools"
 HOMEPAGE="https://github.com/gperftools/gperftools"
@@ -19,7 +17,7 @@ SLOT="0/4"
 # linux x86/amd64/ppc/ppc64/arm
 # OSX ppc/amd64
 # AIX ppc/ppc64
-KEYWORDS="-* ~amd64 ~arm ~ppc ~ppc64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
+KEYWORDS="-* ~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE="largepages +debug minimal optimisememory test static-libs"
 
 DEPEND="|| ( sys-libs/libunwind sys-libs/llvm-libunwind )"
@@ -27,7 +25,7 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
-HTML_DOCS="doc"
+HTML_DOCS="docs"
 
 pkg_setup() {
 	# set up the make options in here so that we can actually make use
@@ -41,22 +39,24 @@ pkg_setup() {
 		MAKEOPTS+=" noinst_PROGRAMS= "
 }
 
+src_prepare() {
+	default
+	eautoreconf
+	multilib_copy_sources
+}
+
 multilib_src_configure() {
 	use largepages && append-cppflags -DTCMALLOC_LARGE_PAGES
 	use optimisememory && append-cppflags -DTCMALLOC_SMALL_BUT_SLOW
 	append-flags -fno-strict-aliasing -fno-omit-frame-pointer
 
-	local myeconfargs=(
-		--htmldir=/usr/share/doc/${PF}/html
-		$(use_enable debug debugalloc)
-	)
-
-	if [[ ${ABI} == x32 ]]; then
-		myeconfargs+=( --enable-minimal )
-	else
-		myeconfargs+=( $(use_enable minimal) )
-	fi
-	autotools-utils_src_configure
+	econf \
+		--htmldir=/usr/share/doc/${PF}/html \
+		--docdir=/usr/share/doc/${PF} \
+		--enable-shared \
+		$(use_enable static-libs static) \
+		$(use_enable debug debugalloc) \
+		$(if [[ ${ABI} == x32 ]]; then printf "--enable-minimal\n" else use_enable minimal; fi)
 }
 
 src_test() {
@@ -68,7 +68,7 @@ src_test() {
 			;;
 	esac
 
-	autotools-multilib_src_test
+	multilib-minimal_src_test
 }
 
 src_install() {
@@ -81,5 +81,5 @@ src_install() {
 		)
 	fi
 
-	autotools-multilib_src_install
+	multilib-minimal_src_install
 }
