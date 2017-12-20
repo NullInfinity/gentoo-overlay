@@ -26,5 +26,6 @@ added without too much care or testing. *USE AT YOUR OWN RISK*.
 
 * `sys-fs/udiskie-1.7.0`
 * `net-im/slack-bin-2.6.3`
+* `sys-apps/yarn-1.3.2`
 
 ## Other
