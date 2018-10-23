@@ -25,6 +25,5 @@ added without too much care or testing. *USE AT YOUR OWN RISK*.
 ## Version Bumped Packages
 
 * `sys-fs/udiskie-1.7.0`
-* `media-libs/freeimage-3.18.0`
 
 ## Other
